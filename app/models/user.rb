@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :room_users
   has_many :rooms, through: :room_users
+  has_many :talks
   belongs_to :country
   has_one_attached :image
 
