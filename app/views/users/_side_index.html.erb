@@ -15,3 +15,35 @@
     <%= link_to "メンバーを作成する", new_room_path %>
   </div>
 </div>
+
+<div class="side-user-index">
+  <div class='user-contents'>
+    <%= search_form_for @p, url: search_users_path do |form| %>
+      <%= form.label :country_id_eq, '旅先' %>
+      <%= form.collection_select :country_id_eq, Country.all, :id, :name %>
+      <%= form.submit '検索' ,class: "search-btn" %>
+    <% end %>
+    <h3 class='title'>Travelers</h3>
+    <ul class='user-lists'>
+      <% @users.each do |user| %>
+        <li class='list'>
+          <%= link_to user_path(user.id) do %>
+            <div class='user-img-content'>
+              <%= image_tag user.image, class: "user-img" if user.image.attached? %>
+            </div>
+            <div class='user-info'>
+              <h3 class='user-name'>
+                <%= user.name %>
+              </h3>
+            </div>
+            <div class='user-info'>
+              <h3 class='user-name'>
+                <%= user.country.name %>
+              </h3>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

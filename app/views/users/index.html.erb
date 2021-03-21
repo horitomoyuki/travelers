@@ -2,6 +2,39 @@
   <div class='side-bar'>
     <%= render "side_index" %>
   </div>
+
+  <div class="chat">
+    <div class="chat-header">
+      <div class="left-header">
+        <div class="chat-header-title">
+          <p>相手を選んでトークを始めましょう！</p>
+        </div>
+      </div>
+      <div class="right-header">
+        <div class="login-room">
+          <ul class="login-room-lists">
+            <li class="background-yellow" id="room-lists"><%= "#{current_user.name}の参加トーク" %></li>
+          </ul>
+          <ul class="room-show-lists hidden" id="room-pull-down">
+            <% current_user.rooms.each do |room| %>
+            <li class="room-pull-down-list"><%= link_to room.name, room_messages_path(room) %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="rooms">
+      <div class="room-upper">
+        <div class="room-upper-name">
+        </div>
+      </div>
+      <div class="room-under">
+        <%= image_tag "human1.jpg", class: "room-img" %>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="footer">

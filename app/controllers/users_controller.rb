@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :create_searching_object, only: [:index, :search]
 
   def index
     @users = User.where.not(id: current_user.id)
@@ -19,9 +20,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def search
+    @results = @p.result
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :image, :introduction, :age, :country_id)
+  end
+
+  def create_searching_object
+    @p = User.ransack(params[:q])
   end
 end
