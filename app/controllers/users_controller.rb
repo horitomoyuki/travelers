@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.where.not(id: current_user.id)
   end
 
   def edit
@@ -12,6 +13,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private
