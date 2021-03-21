@@ -1,0 +1,272 @@
+.account-page__wrapper {
+  position: relative;
+}
+.account-page__img {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  min-height: 100%;
+}
+
+/* ログイン・新規登録ページ */
+.account-page .account-page__inner__session {
+  width: 500px;
+  margin: 60px auto;
+  position: absolute;
+  top: 5px;
+  left: 40px;
+  padding: 40px;
+  z-index: 1;
+}
+.account-page .account-page__inner__registration {
+  /* width: 500px; */
+  margin: 60px auto;
+  position: absolute;
+  top: 5px;
+  left: 300px;
+  padding: 80px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.account-page .account-page__inner__registration .account-page__inner--left, .account-page .account-page__inner__registration .account-page__inner--right {
+  float: left;
+  width: 50%;
+}
+
+.account-page .account-page__inner:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.account-page .account-page__session h2 {
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px black;
+}
+.account-page .account-page__registration h2 {
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+.account-page .account-page__session h5 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px black;
+}
+
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+
+.account-page .field {
+  margin-bottom: 10px;
+}
+.account-page .field .field-label {
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 200;
+}
+.account-page .field .field-label__session {
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 200;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px black;
+}
+.account-page .field .field-label i {
+  font-size: 11px;
+}
+.account-page .field .field-input input {
+  width: 100%;
+  padding: 10px;
+  letter-spacing: 1px;
+}
+.account-page .field .field-input-country input {
+  width: 50%;
+  padding: 10px;
+  letter-spacing: 1px;
+}
+
+.field-input_area {
+  width: 50%;
+}
+.account-page .btn {
+  display: inline-block;
+  height: 50px;
+  padding: 0 30px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+}
+.account-page input[type=submit] {
+  float: left;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #38aef0;
+}
+
+
+.account-page .field-label .field_with_errors {
+  display: inline-block;
+  color: #d65f4c;
+  font-weight: 400;
+}
+.account-page .field-input .field_with_errors {
+  position: relative;
+}
+.account-page .field-input .field_with_errors:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 5px;
+  /* background-color: #d65f4c; */
+}
+
+
+  /* ユーザー詳細情報 */
+.user-show {
+  width: 500px;
+  margin: 60px auto;
+  position: absolute;
+  top: 5px;
+  left: 300px;
+  padding: 80px;
+}
+
+h2.user-show-name {
+  margin-bottom: 10px;
+  color: #2e8b57;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 100%;
+}
+.table-talk{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  background: #fafafa;
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+  width: 30%;
+  padding: 8px;
+}
+.table__col2{
+  text-align: left;
+  border: 1px solid #f5f5f5;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+}
+.card_img {
+  width: 50%;
+}
+
+/* ユーザー編集 */
+.account-page .account-page__inner {
+  width: 980px;
+  margin: 60px auto;
+  padding: 60px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.account-page .account-page__inner .account-page__inner--left, .account-page .account-page__inner .account-page__inner--right {
+  float: left;
+  width: 50%;
+}
+.account-page .account-page__inner:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.account-page .account-page__header h2 {
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: 200;
+}
+.account-page .account-page__header h2:after {
+  content: "";
+  display: block;
+  width: 60px;
+  margin-top: 5px;
+  border-bottom: 1px solid #38aef0;
+}
+.account-page .account-page__header h5 {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.account-page .account-page__header .btn {
+  margin-top: 20px;
+  color: #fff;
+  background-color: gray;
+  font-size: 14px;
+}
+.talk-btn {
+  padding: 20px;
+  color: #fff;
+  background-color: #38aef0;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+
+  /* エラーメッセージ */
+#error_explanation {
+  margin: 20px 0;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+#error_explanation h2 {
+  margin-bottom: 10px;
+  color: #d65f4c;
+  font-size: 14px;
+}
+#error_explanation ul {
+  margin: 0;
+  padding-left: 17px;
+  list-style: square;
+}
+#error_explanation li {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
