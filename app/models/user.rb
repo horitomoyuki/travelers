@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :country
+  has_one_attached :image
 
   validates :name, presence: true
   with_options numericality: { other_than: 1 } do
