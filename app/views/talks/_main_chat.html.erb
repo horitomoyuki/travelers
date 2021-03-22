@@ -17,7 +17,7 @@
 
 <%= form_with model: [@room, @talk], class: 'form', local: true do |f| %>
   <div class="form-input">
-    <%= f.text_field :content, class: 'form-message', placeholder: 'ここにメッセージ内容を入力' %>
+    <%= f.text_field :content, class: 'form-talk', placeholder: 'ここにメッセージ内容を入力' %>
     <label class="form-image">
       <span class="image-file">画像</span>
       <%= f.file_field :image, class: 'hidden' %>

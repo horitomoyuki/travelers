@@ -206,37 +206,37 @@
 
 
 
-.messages {
+.talks {
   background-color: #FAFAFA;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
   overflow: scroll;
 }
 
-.message {
+.talk {
   margin: 10px 0 0 0;
 }
 
-.upper-message{
+.upper-talk{
   display: flex;
 }
 
-.message-user {
+.talk-user {
   color: #434a54;
   font-size: 16px;
 }
 
-.message-date {
+.talk-date {
   color: #999;
   font-size: 12px;
   padding-left: 10px;
 }
 
-.lower-message {
+.lower-talk {
   margin-top: 10px;
 }
 
-.message-content {
+.talk-content {
   color: #434a54;
   font-size: 14px;
   margin-bottom: 40px;
@@ -296,7 +296,7 @@ form input[type="submit"]:hover {
   cursor: hand;
 }
 
-.form-message {
+.form-talk {
   border: none;
   height: 50px;
   width: 100%;
