@@ -25,6 +25,11 @@
   color: #FAFAFA;
   text-decoration: none;
 }
+.side-logo__img {
+  position: absolute;
+  top: 10px;
+  left: 300px;
+}
 
 .chat-header {
   height: 70px;

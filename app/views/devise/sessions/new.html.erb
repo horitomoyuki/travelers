@@ -1,5 +1,7 @@
 <div class="account-page__wrapper">
+
   <%= image_tag "traveler.png", class: "account-page__img" %>
+  <%= image_tag "logo-black.png", class: "account-page-logo__img" %>
   <div class='account-page' id='account-page'>
     <div class='account-page__inner__session clearfix'>
       <div class='account-page__inner--left account-page__session'>
@@ -35,3 +37,113 @@
     </div>
   </div>
 </div>
+
+<div class="midle">
+
+  <div class="container">
+
+    <div class="container_text">Travelersの特徴</div>
+      <h1 class="container_content">Travelersは同じ国に旅する人同士で交流し合うオンラインサービスです。</h1>
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <%= image_tag "human1.jpg", class:"img-fluid" %>
+      </div>
+      <div class="col-md-4 col-12">
+        <%= image_tag "human1.jpg", class:"img-fluid" %>
+      </div>
+      <div class="col-md-4 col-12">
+        <%= image_tag "human1.jpg", class:"img-fluid" %>
+      </div>
+    </div>
+    <h1 class="container_text">Travelersの魅力</h1>
+
+    <div class="d-flex flex-wrap-reverse justify-content-center">
+      <div class="col-md-6 col-12 p-0 align-self-center h3 p-4">
+        <div class="d-flex_title">異国の地だからこそ共感し合える</div>
+        <div class="d-flex_text">バックパッカーとして旅する私にとってTravelersは欠かすことのできないコミュニケーションツール。
+        <br>旅と人と出会うのが好きな人にはピッタリだと思います。</div>
+      </div>
+      <div class="col-md-6 col-12 p-0 align-self-center">
+        <%= image_tag "smile.png", class:"img-fluid" %>
+        <img class="img-fluid" src="img/img7.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center">
+      <div class="col-md-6 col-12 p-0 align-self-center">
+        <%= image_tag "angry.png", class:"img-fluid" %>
+        <img class="img-fluid" src="img/img8.jpg" alt="">
+      </div>
+      <div class="col-md-6 col-12 p-0 align-self-center h3 p-4">
+        <div class="d-flex_title">世界185カ国以上に広がる特別な出会い</div>
+        <div class="d-flex_text">普通に海外旅行をしていては出会えないようなことも、Travelersによって特別な出会いがある。
+        <br>出会いたい人を探しやすくてとても便利です。</div>
+      </div>
+    </div>
+
+    <div class="container_text">使い方は簡単！３ステップ</div>
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <%= image_tag "noname1.png", class:"using-img-fluid" %>
+        <div class="using_title">アカウント作成</div>
+        <div class="using_text">まず、あなたのアカウントを作りましょう。<br>メールアドレス、Facebook、Googleなどのアカウントがあれば５分ほどで完了します。</div>
+      </div>
+      <div class="col-md-4 col-12">
+        <%= image_tag "noname2.png", class:"using-img-fluid" %>
+        <div class="using_title">仲間を探す</div>
+        <div class="using_text">そして、あなたと同じ国に行く旅仲間を探しましょう。<br>検索機能を使い好みの相手を選びます。</div>
+      </div>
+      <div class="col-md-4 col-12">
+        <%= image_tag "noname3.png", class:"using-img-fluid" %>
+        <div class="using_title">メッセージを送る</div>
+        <div class="using_text">気になった人がいたらその人にコンタクトを取ってみましょう。</div>
+      </div>
+    </div>
+
+    <div class="container_text">ご意見・お問い合わせ</div>
+      <div class='contact-form'>
+        <%= form_with local: true do |f|%>
+          <div class='contact-field-label'>
+            <%= f.label :お名前%>
+          </div>
+            <%= f.text_field :name ,class: 'contact-field-input'%>
+          <div class='contact-field-label'>
+            <%= f.label :お問い合わせ内容%>
+          </div>
+            <%= f.text_area :name ,class: 'contact-field-input'%>
+          <div class='actions'>
+          <%= f.submit "送信", class: 'contact-btn'%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="landing_footer">
+  <div class="landing_fotter-block">
+    <div class="landing_fotter-block_title">
+      <h5>企業情報</h5>
+      <p>ピックアップニュース</p>
+      <p>代表者メッセージ</p>
+      <p>株主・投資家の皆様へ</p>
+      <p>採用情報</p>
+    </div>
+    <div class="landing_fotter-block_title">
+      <h5>アプリについて</h5>
+      <p>Travelersのご利用方法</p>
+      <p>利用規約</p>
+      <p>プライバシーポリシー</p>
+      <p>アクセシビリティ対応</p>
+    </div>
+    <div class="landing_fotter-block_title">
+      <h5>サポート</h5>
+      <p>ヘルプサポートセンター</p>
+      <p>セキュリティ対策について</p>
+      <p>新型コロナウイルス対策への取り組み</p>
+    </div>
+  </div>
+  <p>Copyright © Travelers Co.,Ltd. All Rights Reserved.</p>
+</div>
+
