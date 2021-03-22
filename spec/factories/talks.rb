@@ -6,6 +6,6 @@ FactoryBot.define do
   end
 
   after(:build) do |talk|
-    talk.image.attach(io: File.open('public/images/angry.png'), filename: 'angry.png')
+    talk.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
   end
 end
