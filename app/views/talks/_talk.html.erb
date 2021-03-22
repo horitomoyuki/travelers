@@ -1,16 +1,16 @@
 <div class="message">
   <div class="upper-message">
     <div class="message-user">
-      <%= message.user.name %>
+      <%= talk.user.name %>
     </div>
     <div class="message-date">
-      <%= l message.created_at %>
+      <%= l talk.created_at %>
     </div>
   </div>
   <div class="lower-message">
     <div class="message-content">
-      <%= message.content %>
+      <%= talk.content %>
     </div>
-      <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+      <%= image_tag talk.image.variant(resize: '500x500'), class: 'message-image' if talk.image.attached? %>
   </div>
 </div>
