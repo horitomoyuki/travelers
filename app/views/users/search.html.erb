@@ -31,7 +31,7 @@
         <h3 class='title'>検索結果</h3>
         <ul class='user-lists'>
           <% if @results.length !=0 %>
-            <% @results.each do |user| %>
+            <% @results.where.not(id: current_user.id).each do |user| %>
               <%if user%>
                 <li class='list'>
                   <%= link_to user_path(user.id) do %>
