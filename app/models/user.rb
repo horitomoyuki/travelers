@@ -10,10 +10,6 @@ class User < ApplicationRecord
   has_one_attached :image
 
   validates :name, presence: true
-
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
-  validates :password, length: { minimum: 6 }, 
-            format: { with: PASSWORD_REGEX, message: "パスワードは６文字以上半角英数字で入力してください" }
             
   with_options numericality: { other_than: 1 } do
     validates :country_id
