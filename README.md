@@ -29,7 +29,7 @@ http://18.178.165.200/
 ![サンプル画像](demo1.jpg)
 
 ## ユーザー一覧表示
-![サンプル動画](画面収録 1.mov.gif)
+![画面収録 1 mov](https://user-images.githubusercontent.com/78133210/113226062-28c54c80-92ca-11eb-8722-0b11b1e4022b.gif)
 
 ## ユーザー検索
 
