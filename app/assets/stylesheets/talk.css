@@ -13,7 +13,7 @@
 .side-bar-header {
   height: 70px;
   padding: 0 20px;
-  background-color: #13202F;
+  /* background-color: #13202F; */
   display: flex;
   justify-content: space-between;
   align-items: center;
