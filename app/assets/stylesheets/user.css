@@ -164,6 +164,21 @@ a.btn--orange:hover {
   background: #f56500;
 }
 
+.btn--green,
+a.btn--green {
+  color: #fff;
+  background-color: #0dac0d;
+  position: absolute;
+  top: 396px;
+  left: 200px;
+}
+.btn--green:hover,
+a.btn--green:hover {
+  color: #fff;
+  background: #009900;
+}
+
+
 
 .account-page .field {
   margin-bottom: 10px;
