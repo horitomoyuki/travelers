@@ -14,4 +14,12 @@ class User < ApplicationRecord
   with_options numericality: { other_than: 1 } do
     validates :country_id
   end
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "ゲスト"
+      user.country_id = 2
+    end
+  end
 end

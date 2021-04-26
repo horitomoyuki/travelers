@@ -19,5 +19,5 @@
   <li>お相手から</li>
   <li>メッセージ</li>
   <li><%= link_to "プロフィール", user_path(current_user) %></li>
-  <li>その他</li>
+  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 </ul>
