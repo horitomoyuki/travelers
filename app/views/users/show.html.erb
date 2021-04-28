@@ -1,32 +1,40 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2 class="user-show-name">User information</h2>
-      <h4><%= "#{@user.name}さんの情報" %></h4>
+<div class='wrapper'>
+  <div class='side-bar'>
+    <%= render "side_index" %>
+  </div>
+  <div class='account-page' id='account-page'>
+    <div class='account-page__inner clearfix'>
+      <div class='account-page__inner--left account-page__header'>
+        <h2 class="user-show-name">User information</h2>
+        <h4><%= "#{@user.name}さんの情報" %></h4>
+      </div>
+      <table class="table">
+        <%= image_tag @user.image, class: :card_img  if @user.image.attached? %>
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">年齢</th>
+            <td class="table__col2"><%= @user.age %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">旅先</th>
+            <td class="table__col2"><%= @user.country.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">自己紹介</th>
+            <td class="table__col2"><%= @user.introduction %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% if current_user.id == @user.id %>
+        <%= link_to "登録情報編集", edit_user_path(current_user), class: 'talk-btn' %>
+      <% else %>
+        <%= link_to "トークを開始する", new_room_path(@user.id), class: 'talk-btn' %>
+      <% end %>
+      <%= link_to "トップページに戻る", :back, class: 'talk-btn'%>
     </div>
-    <table class="table">
-      <%= image_tag @user.image, class: :card_img  if @user.image.attached? %>
-      <tbody>
-        <tr>
-          <th class="table__col1">名前</th>
-          <td class="table__col2"><%= @user.name %></td>
-        </tr>
-        <tr>
-          <th class="table__col1">年齢</th>
-          <td class="table__col2"><%= @user.age %></td>
-        </tr>
-        <tr>
-          <th class="table__col1">旅先</th>
-          <td class="table__col2"><%= @user.country.name %></td>
-        </tr>
-        <tr>
-          <th class="table__col1">自己紹介</th>
-          <td class="table__col2"><%= @user.introduction %></td>
-        </tr>
-      </tbody>
-    </table>
-    <% if current_user.id != @user.id %>
-      <%= link_to "トークを開始する", new_room_path(@user.id), class: 'talk-btn' %>
-    <% end %>
   </div>
 </div>

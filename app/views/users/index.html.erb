@@ -3,35 +3,25 @@
     <%= render "side_index" %>
   </div>
 
-  <div class="chat">
-    <div class="chat-header">
-      <div class="left-header">
-        <div class="chat-header-title">
-          <p>相手を選んでトークを始めましょう！</p>
-        </div>
-      </div>
-      <div class="right-header">
-        <div class="login-room">
-          <ul class="login-room-lists">
-            <li class="background-yellow" id="room-lists"><%= "#{current_user.name}の参加トーク" %></li>
-          </ul>
-          <ul class="room-show-lists hidden" id="room-pull-down">
-            <% current_user.rooms.each do |room| %>
-            <li class="room-pull-down-list"><%= link_to room.name, room_talks_path(room) %></li>
-          <% end %>
-          </ul>
-        </div>
+  <div class="rooms">
+  <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <%= link_to room.name, room_talks_path(room) %>
       </div>
     </div>
-    
+  <% end %>
+  </div>
+
+  <div class="chat">
     <div class="rooms">
       <div class='user-contents'>
-      <%= search_form_for @p, url: search_users_path do |form| %>
-        <%= form.label :country_id_eq, '旅行先' %>
-        <%= form.collection_select :country_id_eq, Country.all, :id, :name %>
-        <%= form.submit '検索' ,class: "search-btn" %>
-      <% end %>
-      <h3 class='title'>Travelers</h3>
+        <%= search_form_for @p, url: search_users_path do |form| %>
+          <%= form.label :country_id_eq, '旅行先' %>
+          <%= form.collection_select :country_id_eq, Country.all, :id, :name %>
+          <%= form.submit '検索' ,class: "search-btn" %>
+        <% end %>
+        <h3 class='title'>Travelers</h3>
         <ul class='user-lists'>
           <% @users.each do |user| %>
             <li class='list'>
@@ -40,14 +30,10 @@
                   <%= image_tag user.image, class: "user-img" if user.image.attached? %>
                 </div>
                 <div class='user-info'>
-                  <h3 class='user-name'>
-                    <%= user.name %>
-                  </h3>
+                  <h3 class='user-name'><%= user.name %></h3>
                 </div>
                 <div class='user-info'>
-                  <h3 class='user-name'>
-                    <%= user.country.name %>
-                  </h3>
+                  <h3 class='user-name'><%= user.country.name %></h3>
                 </div>
               <% end %>
             </li>
@@ -56,7 +42,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <div class="footer">

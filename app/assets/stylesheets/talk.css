@@ -1,94 +1,19 @@
 .wrapper {
   display: flex;
+  width :100%;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .side-bar {
   background-color: #FFFFFF;
-  width: 850px;
-  /* height: 100vh; */
-  /* position: fixed; */
+  width: 300px;
 }
 
-/* 上部バー部分 */
-.side-bar-header {
-  height: 70px;
-  padding: 0 20px;
-  /* background-color: #13202F; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-name a{
-  padding-bottom: 10px; 
-  font-size: 20px;
-  color: #FAFAFA;
-  text-decoration: none;
-}
 .side-logo__img {
   position: absolute;
   top: 10px;
   left: 300px;
-}
-
-.chat-header {
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  background-color: #F7E160;
-  text-align: center;
-}
-
-.chat-header-title {
-  display: inline-block;
-  color: rgb(117, 107, 89);
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 18px;
-  padding-left: 60px;
-  font-family: "游ゴシック", "YuGothic";
-}
-.header-title p {
-  display: inline-block;
-}
-
-/* ログインユーザー名プルダウン */
-.login-user {
-  width: 100%;
-  font-size: 20px;
-}
-.login-user-lists {
-  display: flex;
-  justify-content: space-around;
-  cursor: pointer;
-  cursor: hand;
-}
-.red{
-  background-color: #182D46;
-}
-.show-lists{
-  width: 137px;
-  position: absolute;
-  top: 70px;
-  background-color: #ffffff;
-  z-index: 1;
-}
-.background-red{
-  color: white;
-  padding: 20px;
-  font-size: 15px;
-  font-weight: bold;
-}
-.pull-down-list{
-  padding: 15px 35px 15px 15px;
-  border: 1px solid #eee;
-  background-color: #13202F;
-  cursor: pointer;
-  cursor: hand;
-}
-.pull-down-list a {
-  font-size: 13px;
-  padding: 0,0,0,40px;
 }
 
 /* ルーム名リスト */
@@ -96,44 +21,6 @@
   width: 100%;
   font-size: 20px;
 }
-.login-room-lists {
-  color: #756B59;
-  display: flex;
-  justify-content: space-around;
-  cursor: pointer;
-  cursor: hand;
-}
-.yellow {
-  background-color: #F7E160;
-}
-.room-show-lists{
-  position: absolute;
-  top: 70px;
-  right: 0;
-  background-color: #ffffff;
-  color: #756B59;
-  z-index: 1;
-}
-.background-yellow{
-  padding: 20px;
-  font-size: 17px;
-  font-weight: bold;
-}
-.room-pull-down-list{
-  width: 255px;
-  padding: 15px 35px 15px 15px;
-  border: 1px solid #ccb950;
-  background-color: #FAFAFA;
-  cursor: pointer;
-  cursor: hand;
-}
-.room-pull-down-list a {
-  color: #756B59;
-  font-weight: bolder;
-  font-size: 15px;
-  padding: 0,0,0,40px;
-}
-
 
 .create-room a{
   font-size: 12px;
@@ -146,41 +33,22 @@
 
 .side-user-index {
   height: calc(100vh - 100px);
-  padding: 20px, 20px;
+  width: 300px;
   overflow: scroll;
   justify-content: space-between;
   text-align: center;
 }
 
 .rooms {
-  background-color: #F7E160;
   height: calc(100vh - 100px);
   padding: 20px, 20px;
   overflow: scroll;
-  /* display: flex; */
   justify-content: space-between;
   text-align: center;
 }
 
 .chat {
   background-color: #FFFFFF;
-  width: calc(100vw - 850px);
-}
-
-.right-header {
-  padding: 10px;
-}
-.header-button {
-  padding: 13px;
-  font-weight: bold;
-}
-
-.header-button a {
-  font-size: 10px;
-  text-decoration: none;
-  border: 1px solid darkred;
-  color: darkred;
-  padding: 14px;
 }
 
 
@@ -205,13 +73,14 @@
 
 .room-name a {
   text-decoration: none;
-  color: white;
+  color: rgb(62, 68, 72);
 }
 
 
 
 
 .talks {
+  width: 800px;
   background-color: #FAFAFA;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
