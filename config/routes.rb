@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :likes, only: [:create, :destroy]
   end
   resources :rooms, only: [:new, :create, :destroy] do
     resources :talks, only: [:index, :create]

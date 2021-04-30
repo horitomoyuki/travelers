@@ -6,6 +6,12 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :talks
+  has_many :likes
+
+  def already_liked?(user)
+    self.likes.exists?(user_id: user.id)
+  end
+
   belongs_to :country
   has_one_attached :image
 

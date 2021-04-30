@@ -1,0 +1,8 @@
+<div class="like_button_on">
+  <h5>いいね件数: <%= @user.likes.count %></h5>
+  <% if @user.already_liked?(@user) %>
+    <%= button_to 'いいねを取り消す', user_like_path(@user.id), method: :delete %>
+  <% else %>
+    <%= button_to 'いいね', user_likes_path(@user.id) %>
+  <% end %>
+</div>
