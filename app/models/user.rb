@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :room_users
   has_many :talks
   has_many :likes
+  has_many :footprints
 
   def already_liked?(user)
     self.likes.exists?(user_id: user.id)

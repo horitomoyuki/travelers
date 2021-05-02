@@ -12,7 +12,14 @@ Rails.application.routes.draw do
       get 'search'
     end
     resources :likes, only: [:create, :destroy]
+    resources :footprints, only: [:index, :create]
+    member do
+      get :show
+      get :follower
+      get :following
+    end
   end
+
   resources :rooms, only: [:new, :create, :destroy] do
     resources :talks, only: [:index, :create]
   end

@@ -299,6 +299,24 @@ h2.user-show-name {
 }
 .card_img {
   width: 20%;
+  border-radius: 16px;
+}
+.user_button {
+  /* display: flex; */
+}
+.like_button {
+  /* display: flex; */
+}
+.like_button_on {
+  height: 100px;
+  position: relative;
+  padding-bottom: 30px;
+}
+.like-btn {
+  background-color: red;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
 }
 
 /* ユーザー編集 */
@@ -350,7 +368,7 @@ h2.user-show-name {
   background-color: #38aef0;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 
