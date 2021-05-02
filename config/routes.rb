@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "users#index"
+  root to: 'users#index'
 
-  get '/users/search',  to: 'users#search'
+  get '/users/search', to: 'users#search'
+  get '/users/search_index', to: 'users#search_index'
+  
   devise_scope :user do
     post '/users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end

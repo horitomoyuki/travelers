@@ -95,7 +95,9 @@ VSCode
 | encrypted_password | string  | null: false |
 | introduction       | text    |             |
 | age                | integer |             |
-| country_id         | integer | null: false |
+| job_id             | integer |             |
+| birthplace_id      | integer |             |
+| residence_id       | integer |             |
 
 ### Association
 

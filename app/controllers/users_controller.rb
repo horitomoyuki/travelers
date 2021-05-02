@@ -25,6 +25,10 @@ class UsersController < ApplicationController
     @results = @p.result
   end
 
+  def search_index
+    @p = User.ransack(params[:q])
+  end
+
   private
 
   def user_params

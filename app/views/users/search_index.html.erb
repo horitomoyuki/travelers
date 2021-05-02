@@ -1,0 +1,11 @@
+<div class='wrapper'>
+  <div class='side-bar'>
+    <%= render "side_index" %>
+  </div>
+
+  <%= search_form_for @p, url: search_users_path do |form| %>
+    <%= form.label :country_id_eq, '旅行先' %>
+    <%= form.collection_select :country_id_eq, Country.all, :id, :name %>
+    <%= form.submit '検索' ,class: "search-btn" %>
+  <% end %>
+</div>
