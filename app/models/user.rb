@@ -9,17 +9,21 @@ class User < ApplicationRecord
   has_many :likes
   has_many :footprints
 
-  def already_liked?(user)
-    self.likes.exists?(user_id: user.id)
-  end
-
   belongs_to :country
+  belongs_to :job
+  belongs_to :birthplace
+  belongs_to :residence
+  
   has_one_attached :image
 
   validates :name, presence: true
             
   with_options numericality: { other_than: 1 } do
     validates :country_id
+  end
+
+  def liked_by?(current_user)
+    likes.where(user_id: current_user.id).exists?
   end
 
   def self.guest

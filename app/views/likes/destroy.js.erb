@@ -1,2 +1,2 @@
 console.log($.fn.jquery)
-$('#buttons_<%= @user.id %>').html("<%= j(render partial: 'likes/like' ) %>");
+$('#buttons_<%= current_user.id %>').html("<%= j(render partial: 'likes/like' ) %>");
