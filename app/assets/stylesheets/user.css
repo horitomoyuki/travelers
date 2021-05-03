@@ -302,14 +302,18 @@ h2.user-show-name {
   border-radius: 16px;
 }
 .user_button {
-  /* display: flex; */
-}
-.like_button {
-  /* display: flex; */
+  display: flex;
 }
 .like_button_on {
   height: 100px;
   position: relative;
+  padding-bottom: 30px;
+}
+.follow_button_on {
+  height: 100px;
+  position: absolute;
+  top: 442px;
+  left: 450px;
   padding-bottom: 30px;
 }
 .like-btn {

@@ -30,11 +30,12 @@
         </tbody>
       </table>
       <div class="user_button">
-      <div class='like_button'>
         <div id="buttons_<%= @user.id %>">
           <%= render 'likes/like', user: @user %>
         </div>
-      </div>
+        <div id="follow-buttons_<% @user.id %>">
+          <%= render 'relationships/relationship', user: @user %>
+        </div>
       </div>
 
       <% if current_user.id == @user.id %>
