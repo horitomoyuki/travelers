@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :talks
-  has_many :likes
+  # has_many :likes
   has_many :footprints
   has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follower
@@ -26,9 +26,9 @@ class User < ApplicationRecord
     validates :country_id
   end
 
-  def liked_by?(current_user)
-    likes.where(user_id: current_user.id).exists?
-  end
+  # def liked_by?(current_user)
+  #   likes.where(user_id: current_user.id).exists?
+  # end
 
   def follow(other_user)
     return if self == other_user
@@ -40,7 +40,7 @@ class User < ApplicationRecord
   end
 
   def unfollow(relationships_ids)
-    relationships.find(relationship_ids).destroy
+    relationships.where(id: relationship_ids).destroy_all
   end
 
   def self.guest
