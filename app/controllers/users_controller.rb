@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :image, :introduction, :age, :country_id)
+    params.require(:user).permit(:name, :email, :image, :introduction, :age, :country_id, :job_id, :birthplace_id, :residence_id)
   end
 
   def create_searching_object

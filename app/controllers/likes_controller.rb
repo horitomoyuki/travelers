@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   before_action :set_user
 
   def create
-    @like = @user.likes.build(user_id: params[:user_id])
+    @like = current_user.likes.build(user_id: params[:user_id])
     @like.save
   end
 
