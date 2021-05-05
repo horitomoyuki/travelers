@@ -3,18 +3,8 @@
     <%= render "side_index" %>
   </div>
 
-  <div class="rooms">
-    <% current_user.rooms.each do |room| %>
-      <div class="room">
-        <div class="room-name">
-          <%= link_to room.name, room_talks_path(room) %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="chat">
-    <div class="rooms">
+  <%# <div class="chat"> %>
+    <%# <div class="rooms"> %>
       <div class='user-contents'>
         <h3 class='title'>Travelers</h3>
         <ul class='user-lists'>
@@ -35,8 +25,8 @@
           <% end %>
         </ul>
       </div>
-    </div>
-  </div>
+    <%# </div> %>
+  <%# </div> %>
 </div>
 
 <div class="footer">

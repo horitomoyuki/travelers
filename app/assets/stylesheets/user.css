@@ -14,6 +14,9 @@
   top: 10px;
   left: 50px;
 }
+.account-page {
+  margin-left: 30px;
+}
 .midle {
   position: absolute;
   top: 600px;
@@ -164,6 +167,19 @@ a.btn--orange:hover {
   background: #f56500;
 }
 
+.btn--blue,
+a.btn--blue {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #38aef0;
+  border-radius: 15px;
+}
+.btn--blue:hover,
+a.btn--blue:hover {
+  color: #fff;
+  background: #84d3ef;
+}
+
 .btn--green,
 a.btn--green {
   color: #fff;
@@ -224,12 +240,12 @@ a.btn--green:hover {
   border: none;
   border-radius: 2px;
 }
-.account-page input[type=submit] {
+/* .account-page input[type=submit] {
   float: left;
   margin-top: 20px;
   color: #fff;
   background-color: #38aef0;
-}
+} */
 
 
 .account-page .field-label .field_with_errors {
@@ -298,7 +314,7 @@ h2.user-show-name {
   padding: 16px 8px;
 }
 .card_img {
-  width: 20%;
+  width: 50%;
   border-radius: 16px;
 }
 .user_button {
@@ -311,16 +327,31 @@ h2.user-show-name {
 }
 .follow_button_on {
   height: 100px;
-  position: absolute;
-  top: 442px;
-  left: 730px;
+  position: relative;
   padding-bottom: 30px;
 }
 .like-btn {
-  background-color: red;
+  color: #fff;
+  background: linear-gradient(135deg, #ff8f87 0%, #fc6675 100%);
   cursor: pointer;
   position: absolute;
   top: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 150px;
+}
+.follow-btn {
+  color: #fff;
+  background: linear-gradient(135deg, #6aaff5 0%, #3283d7 100%);
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 150px;
 }
 
 /* ユーザー編集 */
@@ -372,7 +403,7 @@ h2.user-show-name {
   background-color: #38aef0;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 

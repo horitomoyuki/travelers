@@ -24,6 +24,49 @@ li {
   color: rgb(62, 68, 72);
   padding: 12px 8px;
 }
+.rooms-list {
+  display: flex;
+  height: calc(100vh - 40px);
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.room-list {
+  height: calc(100vh - 40px);
+  display: block;
+  flex: 0 0 320px;
+  border-right: 1px solid rgb(214, 215, 216);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  width: 300px;
+  overflow: auto;
+  z-index: 161;
+}
+.room-message {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 56px 24px 16px;
+  border-bottom: 1px solid rgb(214, 215, 216);
+}
+.message-now {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  padding: 20px 24px 8px;
+}
+.room-name-btn {
+  cursor: pointer;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px;
+}
 
 .chat-room-form {
   width: 980px;

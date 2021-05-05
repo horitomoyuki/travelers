@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  position: relative;
   width :100%;
   margin-left: 200px;
   margin-right: 200px;
@@ -7,7 +8,8 @@
 
 .side-bar {
   background-color: #FFFFFF;
-  width: 300px;
+  width: 200px;
+  border-right: 1px solid rgb(214, 215, 216);
 }
 
 .side-logo__img {
@@ -39,18 +41,23 @@
   text-align: center;
 }
 
+.chat {
+  position: absolute;
+  left: 300px;
+  background-color: #FFFFFF;
+  height: calc(100vh - 40px);
+}
 .rooms {
-  height: calc(100vh - 100px);
   padding: 20px, 20px;
   overflow: scroll;
   justify-content: space-between;
   text-align: center;
 }
-
-.chat {
-  background-color: #FFFFFF;
+.message-form {
+  position: absolute;
+  bottom: 0;
+  width: 800px;
 }
-
 
 .room-upper {
   height: 50%;
@@ -76,19 +83,22 @@
   color: rgb(62, 68, 72);
 }
 
-
-
-
+.chat {
+  position: relative;
+}
 .talks {
   width: 800px;
   background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
+  height: calc(100vh - 90px - 40px);
   padding: 46px 40px 0;
   overflow: scroll;
 }
 
 .talk {
   margin: 10px 0 0 0;
+}
+.message {
+  overflow: scroll;
 }
 
 .upper-talk{
@@ -126,10 +136,10 @@ form input,form textarea {
   font-family: "游ゴシック", "YuGothic";
 }
 
-form input[type="submit"]:hover {
+/* form input[type="submit"]:hover {
   background-color: #84d3ef;
   cursor: pointer;
-}
+} */
 .search-form {
   text-align: center;
   padding-top: 32px;

@@ -1,16 +1,16 @@
 <div class="side-user-index">
-<% current_user.rooms.each do |room| %>
-  <%= link_to room.name, room_talks_path(room) %>
-<% end %>
+  <% current_user.rooms.each do |room| %>
+    <%= link_to room.name, room_talks_path(room) %>
+  <% end %>
   <% User.where(id: @room.users.ids).each do |user| %>
-  <table class="table-talk">
-    <%= image_tag user.image, class: :card_img  if user.image.attached? %>
-    <tbody>
-      <tr>
-        <th class="table__col1">名前</th>
-        <td class="table__col2"><%= user.name %></td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table-talk">
+      <%= image_tag user.image, class: :card_img  if user.image.attached? %>
+      <tbody>
+        <tr>
+          <th class="table__col1">名前</th>
+          <td class="table__col2"><%= user.name %></td>
+        </tr>
+      </tbody>
+    </table>
   <% end %>
 </div>
