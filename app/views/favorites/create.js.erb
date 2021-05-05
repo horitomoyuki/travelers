@@ -1,0 +1,2 @@
+console.log($.fn.jquery)
+$('#like-buttons_<%= @liked_user.id %>').html("<%= j(render 'favorites/favorite', like: @liked_user ) %>");

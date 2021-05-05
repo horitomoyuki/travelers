@@ -31,24 +31,21 @@ class User < ApplicationRecord
     validates :country_id
   end
 
-  # def liked_by?(current_user)
-  #   likes.where(user_id: current_user.id).exists?
-  # end
-
-  def like(other_user)
-    return if self == other_user
-    favorites.find_or_create_by!(like: other_user)
+# いいね機能
+  def liked(liked_user)
+    return if self == liked_user
+    favorites.find_or_create_by!(like: liked_user)
   end
 
   def liking?(user)
     likings.include?(user)
   end
 
-  def unlike(favorite_id)
-    favorites.find(favorite_id).destroy!
+  def unlike(like_ids)
+    favorites.where(like_id: like_ids).destroy_all
   end
   
-
+# フォロー機能
   def follow(follower)
     return if self == follower
     relationships.find_or_create_by!(follower: follower)
@@ -62,6 +59,7 @@ class User < ApplicationRecord
     relationships.where(follower_id: follower_ids).destroy_all
   end
 
+# ゲストログイン機能
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64

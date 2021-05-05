@@ -11,6 +11,7 @@ http://18.178.165.200/
 ログイン情報（テスト用）
 - Eメール：test@test.com
 - パスワード：abc123
+またはゲストログインにより、ログイン可能
 
 # 制作背景
 - 制作意図
@@ -66,11 +67,11 @@ http://18.178.165.200/
 ## バックエンド
 Ruby, Ruby on Rails
 ## フロントエンド
-HTML, CSS, JavaScript
+HTML, CSS, JavaScript(jQuery)
 ## データベース
 MySQL, SequelPro
 ## インフラ
-Heroku
+AWS
 ## ソース管理
 GitHub, GitHubDesktop
 ## テスト
@@ -78,10 +79,7 @@ RSpec
 ## エディタ
 VSCode
 # 課題・実装予定機能
-- 検索機能の拡張（年齢、国籍、職業etc）
 - コメント返信機能
-- ユーザー登録をウィザード形式にする
-- SNS認証
 
 # テーブル設計
 
@@ -104,6 +102,14 @@ VSCode
 - has_many :room_users
 - has_many :rooms, through: room_users
 - has_many :talks
+- has_many :relationships, dependent: :destroy
+- has_many :followings, through: :relationships, source: :follower
+- has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
+- has_many :followers, through: :passive_relationships, source: :user
+- has_many :favorites, dependent: :destroy
+- has_many :likings, through: :favorites, source: :like
+- has_many :passive_favorites, class_name: 'Favorite', foreign_key: 'like_id', dependent: :destroy
+- has_many :likes, through: :passive_favorites, source: :user
 
 ## rooms テーブル
 
@@ -141,3 +147,27 @@ VSCode
 
 - belongs_to :room
 - belongs_to :user
+
+## relationships テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true | 
+| follower | references | null: false, foreign_key: true | 
+
+### Association
+
+- belongs_to :user
+- belongs_to :follower, class_name: 'User'
+
+## favorites テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true | 
+| like    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :like, class_name: 'User'

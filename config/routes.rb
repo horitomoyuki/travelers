@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/users/search', to: 'users#search'
   get '/users/search_index', to: 'users#search_index'
-  
+  get '/rooms/index', to: 'rooms#index'
   
   devise_scope :user do
     post '/users/guest_sign_in', to: 'users/sessions#guest_sign_in'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-    resources :likes, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
     # resources :footprints, only: [:index, :create]
     # member do
     #   get :show

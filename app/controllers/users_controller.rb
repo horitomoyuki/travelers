@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @like = Like.new
   end
 
   def search

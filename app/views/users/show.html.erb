@@ -30,20 +30,22 @@
         </tbody>
       </table>
       <div class="user_button">
-        <div id="buttons_<%= @user.id %>">
-          <%= render 'likes/like', user: @user %>
+        <div id="like-buttons_<%= @user.id %>">
+          <%= render 'favorites/favorite', like: @user %>
         </div>
-        <div id="follow-buttons_<% @user.id %>">
-          <%= render 'relationships/relationship', user: @user %>
+        <div id="follow-buttons_<%= @user.id %>">
+          <%= render 'relationships/relationship', follower: @user %>
         </div>
       </div>
-
-      <% if current_user.id == @user.id %>
-        <%= link_to "登録情報編集", edit_user_path(current_user), class: 'talk-btn' %>
-      <% else %>
-        <%= link_to "トークを開始する", new_room_path(@user.id), class: 'talk-btn' %>
-      <% end %>
-      <%= link_to "トップページに戻る", root_path, class: 'talk-btn'%>
     </div>
+    <% if current_user.id == @user.id %>
+      <%= link_to "登録情報編集", edit_user_path(current_user), class: 'talk-btn' %>
+    <% else %>
+      <%= link_to "トークを開始する", new_room_path(@user.id), class: 'talk-btn' %>
+    <% end %>
+    <%= link_to "トップページに戻る", root_path, class: 'talk-btn'%>
   </div>
 </div>
+<%# <div class="footer">
+  <p>©️ Travelers</p>
+</div> %>
