@@ -1,2 +1,2 @@
 console.log($.fn.jquery)
-$('#follow-buttons_<%= @other_user.id %>').html("<%= j(render partial: 'relationships/relationship', user: @other_user ) %>");
+$('#follow-buttons_<%= @follower.id %>').html("<%= j(render 'relationships/relationship', follower: @follower ) %>");

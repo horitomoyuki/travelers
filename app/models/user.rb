@@ -6,12 +6,17 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :talks
-  # has_many :likes
   has_many :footprints
+  # フォロー機能
   has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follower
   has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :user 
+  # いいね機能
+  has_many :favorites, dependent: :destroy
+  has_many :likings, through: :favorites, source: :like
+  has_many :passive_favorites, class_name: 'Favorite', foreign_key: 'like_id', dependent: :destroy
+  has_many :likes, through: :passive_favorites, source: :user
 
   belongs_to :country
   belongs_to :job
@@ -30,17 +35,31 @@ class User < ApplicationRecord
   #   likes.where(user_id: current_user.id).exists?
   # end
 
-  def follow(other_user)
+  def like(other_user)
     return if self == other_user
-    relationships.find_or_create_by!(follower: other_user)
+    favorites.find_or_create_by!(like: other_user)
+  end
+
+  def liking?(user)
+    likings.include?(user)
+  end
+
+  def unlike(favorite_id)
+    favorites.find(favorite_id).destroy!
+  end
+  
+
+  def follow(follower)
+    return if self == follower
+    relationships.find_or_create_by!(follower: follower)
   end
 
   def following?(user)
     followings.include?(user)
   end
 
-  def unfollow(relationships_ids)
-    relationships.where(id: relationship_ids).destroy_all
+  def unfollow(follower_ids)
+    relationships.where(follower_id: follower_ids).destroy_all
   end
 
   def self.guest
