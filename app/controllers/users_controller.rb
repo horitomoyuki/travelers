@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def search_index
+    @users = User.where.not(id: current_user.id)
     @p = User.ransack(params[:q])
   end
 

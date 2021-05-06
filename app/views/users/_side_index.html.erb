@@ -1,5 +1,7 @@
+<%= link_to image_tag("logo.png"), root_path, class: "user-page-logo__img" %>
 <div class="side_bar">
   <ul>
+    <li><%= link_to "トップ", root_path %></li>
     <li><%= link_to "さがす", users_search_index_path %></li>
     <li><%= link_to "メッセージ", rooms_index_path %></li>
     <li><%= link_to "フォローリスト", root_path %></li>

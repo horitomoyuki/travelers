@@ -2,45 +2,40 @@
   <div class='side-bar'>
     <%= render "side_index" %>
   </div>
-
-  <div class="chat">
-    <div class="rooms">
-      <div class='user-contents'>
-        <%= search_form_for @p, url: search_users_path do |form| %>
-          <%= form.label :country_id_eq, '旅先' %>
-          <%= form.collection_select :country_id_eq, Country.all, :id, :name,  include_blank: '指定なし' %>
-          <%= form.submit '検索' ,class: "search-btn" %>
-        <% end %>
-        <h3 class='title'>検索結果</h3>
-        <ul class='user-lists'>
-          <% if @results.length !=0 %>
-            <% @results.where.not(id: current_user.id).each do |user| %>
-              <%if user%>
-                <li class='list'>
-                  <%= link_to user_path(user.id) do %>
-                    <div class='user-img-content'>
-                      <%= image_tag user.image, class: "user-img" if user.image.attached? %>
-                    </div>
-                    <div class='user-info'>
-                      <h3 class='user-name'><%= user.name %></h3>
-                    </div>
-                    <div class='user-info'>
-                      <h3 class='user-name'><%= user.country.name %></h3>
-                    </div>
-                  <% end %>
-                </li>
+  <div class='user-contents'>
+    <%= search_form_for @p, url: search_users_path do |f| %>
+      <%= f.label :country_id_eq, '旅先' %>
+      <%= f.collection_select :country_id_eq, Country.all, :id, :name,  include_blank: '指定なし' %>
+      <%= f.submit '検索' ,class: "search-btn" %>
+    <% end %>
+    <h3 class='title'>検索結果</h3>
+    <ul class='user-lists'>
+      <% if @results.length !=0 %>
+        <% @results.where.not(id: current_user.id).each do |user| %>
+          <%if user%>
+            <li class='list'>
+              <%= link_to user_path(user.id) do %>
+                <div class='user-img-content'>
+                  <%= image_tag user.image, class: "user-img" if user.image.attached? %>
+                </div>
+                <div class='user-info'>
+                  <h3 class='user-name'><%= user.name %></h3>
+                </div>
+                <div class='user-info'>
+                  <h3 class='user-name'><%= user.country.name %></h3>
+                </div>
               <% end %>
-            <% end %>
-          <% else %>
-              該当するユーザーはありません
+            </li>
           <% end %>
-        </ul>
-        <br>
-        <div class='account-page' id='account-page'>
-          <div class='account-page__inner--left account-page__header'>
-            <%= link_to 'トップページへ戻る', root_path, class: 'btn' %>
-          </div>
-        </div>
+        <% end %>
+      <% else %>
+          該当するユーザーはありません
+      <% end %>
+    </ul>
+    <br>
+    <div class='account-page' id='account-page'>
+      <div class='account-page__inner--left account-page__header'>
+        <%= link_to 'トップページへ戻る', root_path, class: 'btn' %>
       </div>
     </div>
   </div>
