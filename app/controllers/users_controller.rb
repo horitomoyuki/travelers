@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   before_action :create_searching_object, only: [:index, :search]
 
   def index
