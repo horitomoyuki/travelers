@@ -3,7 +3,7 @@
     <% if current_user.following?(follower) %>
       <%= link_to 'フォロー解除', user_relationship_path(user_id: current_user.id, id: current_user.relationships.find_by(follower_id: follower.id).id), method: :delete, class: 'follow-btn', remote: true %>
     <% else %>
-      <%= link_to 'フォロー', user_relationships_path(user_id: current_user.id, follower_id: follower.id), class: 'follow-btn',method: :post, remote: true %>
+      <%= link_to 'フォロー', user_relationships_path(user_id: current_user.id, follower_id: follower.id), class: 'follow-btn', method: :get, remote: true %>
     <% end %>
   <% end %>
 </div>

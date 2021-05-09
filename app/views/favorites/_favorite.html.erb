@@ -1,12 +1,12 @@
 <div class="like_button_on">
   <% if current_user != like %>
     <% if current_user.liking?(like) %>
-      <%= link_to 'いいねを取り消す', user_favorite_path(user_id: current_user.id, id: current_user.favorites.find_by(like_id: like.id).id), method: :delete, class: 'like-btn', remote: true %>
+      <%= button_to 'いいねを取り消す', user_favorite_path(user_id: current_user.id, id: current_user.favorites.find_by(like_id: like.id).id), method: :delete, class: 'like-btn', remote: true %>
         <i class="fa fa-heart" aria-hidden="true" style="color: red">
           <%#= @user.like_ids.count %>
         </i>
     <% else %>
-      <%= link_to 'いいね', user_favorites_path(user_id: current_user.id, like_id: like.id), class: 'like-btn', method: :post, remote: true %>
+      <%= button_to 'いいね', user_favorites_path(user_id: current_user.id, like_id: like.id), class: 'like-btn', remote: true %>
         <i class="fa fa-heart" aria-hidden="true" style="color: #C0C0C0;">
           <%#= @user.like_ids.count %>
         </i>
