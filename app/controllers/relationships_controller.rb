@@ -2,7 +2,7 @@ class RelationshipsController < ApplicationController
   def create
     @follower = User.find(params[:follower_id])
     current_user.follow(@follower)
-    render :create
+    render "create.js.erb"
   end
 
   def destroy
