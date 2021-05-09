@@ -3,12 +3,12 @@
     <% if current_user.liking?(like) %>
       <%= button_to 'いいねを取り消す', user_favorite_path(user_id: current_user.id, id: current_user.favorites.find_by(like_id: like.id).id), method: :delete, class: 'like-btn', remote: true %>
         <i class="fa fa-heart" aria-hidden="true" style="color: red">
-          <%#= current_user.likes.count %>
+          <%#= @user.like_ids.count %>
         </i>
     <% else %>
       <%= button_to 'いいね', user_favorites_path(user_id: current_user.id, like_id: like.id), class: 'like-btn', remote: true %>
         <i class="fa fa-heart" aria-hidden="true" style="color: #C0C0C0;">
-          <%#= current_user.likes.count %>
+          <%#= @user.like_ids.count %>
         </i>
     <% end %>
   <% end %>

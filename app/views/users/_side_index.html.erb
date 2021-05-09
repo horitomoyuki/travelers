@@ -1,12 +1,11 @@
-<%= link_to image_tag("logo.png"), root_path, class: "user-page-logo__img" %>
+<%= link_to image_tag("logo.png"), root_path, class: "side-logo__img" %>
 <div class="side_bar">
-  <ul>
-    <li><%= link_to "トップ", root_path %></li>
-    <li><%= link_to "さがす", users_search_index_path %></li>
-    <li><%= link_to "メッセージ", rooms_index_path %></li>
-    <li><%= link_to "フォローリスト", root_path %></li>
-    <li><%= link_to "お相手からいいね", root_path %></li>
-    <li><%= link_to "プロフィール", user_path(current_user) %></li>
-    <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+  <ul class="element">
+    <li class="elements"><i class="fa fa-search"></i><%= button_to "さがす", users_search_index_path, class: 'log-btn' , method: :get %></li>
+    <li class="elements"><i class="fa fa-comments"></i><%= button_to "メッセージ", rooms_index_path, class: 'log-btn' , method: :get %></li>
+    <li class="elements"><i class="fa fa-thumbs-up"></i><%= button_to "フォローリスト", root_path, class: 'log-btn' , method: :get %></li>
+    <li class="elements"><i class="fa fa-heart"></i><%= button_to "お相手からいいね", root_path, class: 'log-btn' , method: :get %></li>
+    <li class="elements"><i class="fa fa-user"></i><%= button_to "プロフィール", user_path(current_user), class: 'log-btn' , method: :get %></li>
+    <li class="elements"><i class="fa fa-home"></i><%= button_to "ログアウト", destroy_user_session_path, class: 'log-btn', method: :delete %></li>
   </ul>
 </div>

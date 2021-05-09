@@ -2,20 +2,14 @@
   display: flex;
   position: relative;
   width :100%;
-  margin-left: 200px;
+  margin-left: 150px;
   margin-right: 200px;
 }
 
 .side-bar {
   background-color: #FFFFFF;
-  width: 200px;
+  width: 250px;
   border-right: 1px solid rgb(214, 215, 216);
-}
-
-.side-logo__img {
-  position: absolute;
-  top: 10px;
-  left: 300px;
 }
 
 /* ルーム名リスト */
