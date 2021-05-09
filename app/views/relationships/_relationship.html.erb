@@ -1,9 +1,9 @@
 <div class="follow_button_on">
   <% if current_user != follower %>
     <% if current_user.following?(follower) %>
-      <%= button_to 'フォロー解除', user_relationship_path(user_id: current_user.id, id: current_user.relationships.find_by(follower_id: follower.id).id), method: :delete, class: 'follow-btn', remote: true %>
+      <%= link_to 'フォロー解除', user_relationship_path(user_id: current_user.id, id: current_user.relationships.find_by(follower_id: follower.id).id), method: :delete, class: 'follow-btn', remote: true %>
     <% else %>
-      <%= button_to 'フォロー', user_relationships_path(user_id: current_user.id, follower_id: follower.id), class: 'follow-btn', remote: true %>
+      <%= link_to 'フォロー', user_relationships_path(user_id: current_user.id, follower_id: follower.id), class: 'follow-btn',method: :post, remote: true %>
     <% end %>
   <% end %>
 </div>
