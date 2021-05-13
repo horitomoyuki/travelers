@@ -27,39 +27,39 @@ http://18.178.165.200/
 
 # DEMO
 ## トップページ
-![サンプル画像](demo1.jpg)
-![トップページ mov](https://user-images.githubusercontent.com/78133210/113227590-01707e80-92ce-11eb-8b86-869c55c23db5.gif)
+[![Image from Gyazo](https://i.gyazo.com/b07fbb1aa5e1b2ad50c97f1d501cd109.gif)](https://gyazo.com/b07fbb1aa5e1b2ad50c97f1d501cd109)
 - トップページにログイン画面をつけたこと
 - ユーザーが使ってみたいと思うようなデザイン作り
 
-## ユーザーログイン機能
-![ユーザーログイン mov](https://user-images.githubusercontent.com/78133210/113227518-d1c17680-92cd-11eb-9c76-41418646e6ef.gif)
+## ログイン機能(device)
+[![Image from Gyazo](https://i.gyazo.com/af7cf6a8427e1e120d658a6abe677d79.gif)](https://gyazo.com/af7cf6a8427e1e120d658a6abe677d79)
+- ユーザーログインと新規登録機能を実装
+## ゲストログイン機能
+[![Image from Gyazo](https://i.gyazo.com/c89edba0dfaa4eb683ea8a102d47b499.gif)](https://gyazo.com/c89edba0dfaa4eb683ea8a102d47b499)
+- 新規登録せずにログイン可能
 
-## ユーザー一覧表示
-![画面収録 1 mov](https://user-images.githubusercontent.com/78133210/113226062-28c54c80-92ca-11eb-8722-0b11b1e4022b.gif)
-- サイトに登録してあるユーザーの一覧が表示される
-
-## ユーザー検索機能
-![国名検索 mov](https://user-images.githubusercontent.com/78133210/113226410-126bc080-92cb-11eb-9c89-9ba63b03d0ca.gif)
+## 検索機能(ransack)
+[![Image from Gyazo](https://i.gyazo.com/fcabbdc97f902f1ddef0242b9a56406e.gif)](https://gyazo.com/fcabbdc97f902f1ddef0242b9a56406e)
 - 国名選択にはActiveHashの技術を用いて実装
 - 国名を選択して検索をかけると該当する国名のユーザーが検索結果として表示される
 
+## いいね機能(ajax)
+[![Image from Gyazo](https://i.gyazo.com/53c17e06052554fd643cbc166b8b29ff.gif)](https://gyazo.com/53c17e06052554fd643cbc166b8b29ff)
+非同期通信によりいいね機能を実装
+
+## フォロー機能(ajax)
+[![Image from Gyazo](https://i.gyazo.com/9c38385cc060ad65f8ad6ffbd89ce75a.gif)](https://gyazo.com/9c38385cc060ad65f8ad6ffbd89ce75a)
+非同期通信によって自分のお気に入りのユーザーをフォローする
+
 ## トーク作成機能
-![トーク作成機能 mov](https://user-images.githubusercontent.com/78133210/113227127-d3d70580-92cc-11eb-8706-00fc1e6edd15.gif)
+[![Image from Gyazo](https://i.gyazo.com/46a2313d33f49c8d960b331f0e7642c8.gif)](https://gyazo.com/46a2313d33f49c8d960b331f0e7642c8)
 - トークをしたいユーザーを選び、詳細ページからトークするボタンを押下
 - トーク作成ルームに移りトーク名を作成
-- ページ遷移した後、右上欄からトークルームに遷移し、トークが開始される
 
 ## メッセージ投稿機能
-![メッセージ投稿機能 mov](https://user-images.githubusercontent.com/78133210/113227321-624b8700-92cd-11eb-9a43-c3efdd55d686.gif)
+[![Image from Gyazo](https://i.gyazo.com/74bbadcc10d0ed37bf56287b71b2baeb.gif)](https://gyazo.com/74bbadcc10d0ed37bf56287b71b2baeb)
 - 右下のメッセージ欄からメッセージを投稿できる
-- 画像の投稿も可能
-
-## その他
-- ユーザー編集機能
-- トーク削除機能
-- いいね機能
-- フォロー機能
+- 画像投稿機能(ActiveStorage)で画像投稿も可能
 
 # 工夫したポイント
 - 使い勝手の良さ
@@ -67,13 +67,13 @@ http://18.178.165.200/
 
 # 使用技術
 ## バックエンド
-Ruby, Ruby on Rails
+Ruby:2.6.5, Ruby on Rails:6.0.0
 ## フロントエンド
-HTML, CSS, JavaScript(jQuery)
+HTML, CSS, JavaScript(jQuery),WebPacker
 ## データベース
 MySQL, SequelPro
 ## インフラ
-AWS
+AWS(EC2), nginx, unicorn
 ## ソース管理
 GitHub, GitHubDesktop
 ## テスト
