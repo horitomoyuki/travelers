@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :create_searching_object, only: [:index, :search]
+  before_action :set_user, only: [:index, :search_index]
+  before_action :create_searching_object, only: [:index, :search, :search_index]
 
   def index
-    @users = User.where.not(id: current_user.id)
   end
 
   def edit
@@ -21,18 +21,21 @@ class UsersController < ApplicationController
   end
 
   def search
+    @users = User.search(params[:keyword])
     @results = @p.result
   end
 
   def search_index
-    @users = User.where.not(id: current_user.id)
-    @p = User.ransack(params[:q])
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :image, :introduction, :age, :country_id, :job_id, :birthplace_id, :residence_id)
+  end
+
+  def set_user
+    @users = User.where.not(id: current_user.id)
   end
 
   def create_searching_object

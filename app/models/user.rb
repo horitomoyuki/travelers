@@ -31,6 +31,15 @@ class User < ApplicationRecord
     validates :country_id
   end
 
+# 検索機能
+  def self.search(search)
+    if search != ""
+      User.where('name LIKE(?)', "%#{search}%")
+    else
+      User.all
+    end
+  end
+
 # いいね機能
   def liked(liked_user)
     return if self == liked_user
