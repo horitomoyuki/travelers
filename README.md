@@ -19,7 +19,7 @@ http://18.178.165.200/
 - ペルソナ<br>
 老若男女問わず海外旅行と人と交流するのが好きな人
 - ユースケース<br>
-初めての海外旅行で知らない土地に不安を覚えている人が、同じく初めての海外旅行を経験している人と行動を共にしたい
+初めての海外旅行で知らない土地に不安を覚えている人が、同じく初めての海外旅行を経験している人と行動を共にしたい<br>
 バックパッカーとして世界一周旅行している人が現地の同じ国籍の人たちと旅をしながら交流を深めていくために利用する
 - 課題解決<br>
 海外旅行する上での不安感を取り除く
@@ -113,6 +113,10 @@ VSCode
 - has_many :likings, through: :favorites, source: :like
 - has_many :passive_favorites, class_name: 'Favorite', foreign_key: 'like_id', dependent: :destroy
 - has_many :likes, through: :passive_favorites, source: :user
+- belongs_to :country
+- belongs_to :job
+- belongs_to :birthplace
+- belongs_to :residence
 
 ## rooms テーブル
 
