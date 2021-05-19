@@ -27,7 +27,7 @@ http://18.178.165.200/
 
 # DEMO
 ## トップページ
-[![Image from Gyazo](https://i.gyazo.com/b07fbb1aa5e1b2ad50c97f1d501cd109.gif)](https://gyazo.com/b07fbb1aa5e1b2ad50c97f1d501cd109)
+[![Image from Gyazo](https://i.gyazo.com/76151dc7a8605e8dcb8278b8aaf8d9c7.gif)](https://gyazo.com/76151dc7a8605e8dcb8278b8aaf8d9c7)
 - トップページにログイン画面をつけたこと
 - ユーザーが使ってみたいと思うようなデザイン作り
 
@@ -83,6 +83,7 @@ VSCode
 # 課題・実装予定機能
 - 絞り込み検索
 - コメント返信機能
+- レスポンシブ対応
 
 # テーブル設計
 
