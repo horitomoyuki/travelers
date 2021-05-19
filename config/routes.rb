@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     #   get :following
     # end
     resources :relationships, only: [:create, :destroy]
+    resources :notifications, only: :index
   end
 
   resources :rooms, only: [:new, :create, :destroy] do

@@ -17,6 +17,9 @@ class User < ApplicationRecord
   has_many :likings, through: :favorites, source: :like
   has_many :passive_favorites, class_name: 'Favorite', foreign_key: 'like_id', dependent: :destroy
   has_many :likes, through: :passive_favorites, source: :user
+  # 通知機能
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   belongs_to :country
   belongs_to :job
@@ -66,6 +69,30 @@ class User < ApplicationRecord
 
   def unfollow(follower_ids)
     relationships.where(follower_id: follower_ids).destroy_all
+  end
+
+  # いいね通知
+  # def create_notification_follow!(current_user)
+  #   temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
+  #   if temp.blank?
+  #     notification = current_user.active_notifications.new(
+  #       visited_id: id,
+  #       action: 'follow'
+  #     )
+  #     notification.save if notification.valid?
+  #   end
+  # end
+
+  # フォロー通知
+  def create_notification_follow!(current_user)
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
+    if temp.blank?
+      notification = current_user.active_notifications.new(
+        visited_id: id,
+        action: 'follow'
+      )
+      notification.save if notification.valid?
+    end
   end
 
 # ゲストログイン機能
