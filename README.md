@@ -115,6 +115,8 @@ VSCode
 - has_many :likings, through: :favorites, source: :like
 - has_many :passive_favorites, class_name: 'Favorite', foreign_key: 'like_id', dependent: :destroy
 - has_many :likes, through: :passive_favorites, source: :user
+- has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+- has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 - belongs_to :country
 - belongs_to :job
 - belongs_to :birthplace
@@ -154,6 +156,7 @@ VSCode
 
 ### Association
 
+- has_many :notifications, dependent: :destroy
 - belongs_to :room
 - belongs_to :user
 
@@ -166,6 +169,7 @@ VSCode
 
 ### Association
 
+- has_many :notifications, dependent: :destroy
 - belongs_to :user
 - belongs_to :follower, class_name: 'User'
 
@@ -178,5 +182,26 @@ VSCode
 
 ### Association
 
+- has_many :notifications, dependent: :destroy
 - belongs_to :user
 - belongs_to :like, class_name: 'User'
+
+## notifications テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| visitor    | references | null: false, foreign_key: true | 
+| visited    | references | null: false, foreign_key: true |
+| relationship | references | null: false, foreign_key: true |
+| favorites    | references | null: false, foreign_key: true |
+| talk    | references | null: false, foreign_key: true |
+| action    | string | null: false, default: "" |
+| checked    | boolean | null: false, default: false |
+
+### Association
+
+- belongs_to :relationship, optional: true
+- belongs_to :favorite, optional: true
+- belongs_to :talk, optional: true
+- belongs_to :visitor, class_name: 'User', foreign_key: 'visitor_id', optional :true
+- belongs_to :visited, class_name: 'User', foreign_key: 'visited_id', optional :true
