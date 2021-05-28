@@ -4,7 +4,7 @@
     <li class="elements"><i class="fa fa-search"></i><%= button_to "さがす", users_search_index_path, class: 'log-btn' , method: :get %></li>
     <li class="elements"><i class="fa fa-comments"></i><%= button_to "メッセージ", rooms_index_path, class: 'log-btn' , method: :get %></li>
     <li class="elements"><i class="fa fa-thumbs-up"></i><%= button_to "フォローリスト", root_path, class: 'log-btn' , method: :get %></li>
-    <li class="elements"><i class="fa fa-heart"></i><%= button_to "お相手からいいね", user_notifications_path, class: 'log-btn' , method: :get %></li>
+    <li class="elements"><i class="fa fa-heart"></i><%= button_to "お相手からいいね", notifications_path, class: 'log-btn' , method: :get %></li>
     <li class="elements"><i class="fa fa-user"></i><%= button_to "プロフィール", user_path(current_user), class: 'log-btn' , method: :get %></li>
     <li class="elements"><i class="fa fa-home"></i><%= button_to "ログアウト", destroy_user_session_path, class: 'log-btn', method: :delete %></li>
   </ul>

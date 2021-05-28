@@ -23,8 +23,8 @@ Rails.application.routes.draw do
     #   get :following
     # end
     resources :relationships, only: [:create, :destroy]
-    resources :notifications, only: :index
   end
+  resources :notifications, only: [:index]
 
   resources :rooms, only: [:new, :create, :destroy] do
     resources :talks, only: [:index, :create]
