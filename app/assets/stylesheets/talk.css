@@ -209,3 +209,19 @@ form input,form textarea {
 .hidden {
   display: none;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .wrapper {
+    width :90%;
+    height :100%;
+  }
+}
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+  .wrapper {
+    width :90%;
+    height :100%;
+  }
+}
