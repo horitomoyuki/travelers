@@ -21,7 +21,7 @@ class Talk < ApplicationRecord
   def save_notification_chat!(current_user, talk_id, visited_id)
     notification = current_user.active_notifications.new(
       talk_id: talk_id,
-      visited:_id: visited_id,
+      visited_id: visited_id,
       action: 'talk'
     )
     if notification.visitor_id == notification.visited_id
