@@ -29,6 +29,8 @@ class User < ApplicationRecord
   has_one_attached :image
 
   validates :name, presence: true
+
+  enum gender: { man: 0, woman: 1 }
             
   with_options numericality: { other_than: 1 } do
     validates :country_id
