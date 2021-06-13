@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light">
+  <%= link_to root_path, class: "nav-item nav-link", data: { turbolinks: :false } do %>
+    <span class="<%= 'active' if current_page?(root_path) %>">
+      <i class="fas fa-fire fa-lg inherit"></i>
+    </span>
+  <% end %>
+  <%= link_to root_path, class: "nav-item nav-link" do %>
+    <span class="<%= 'active' if current_page?(root_path) %>">
+      <i class="fas fa-comments fa-lg inherit"></i>
+    </span>
+  <% end %>
+  <%= link_to root_path, class: "nav-item nav-link" do %>
+    <span class="<%= 'active' if current_page?(root_path) || current_page?(root_path) %>">
+      <i class="fas fa-user fa-lg inherit"></i>
+    </span>
+  <% end %>
+</nav>
